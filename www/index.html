@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- jquery js -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+   
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <!-- Controller's js -->
+    <script type="text/javascript" src="js/control.js"></script>
+
+  </head>
+  <body>
+    <ion-pane>
+      <ion-content >
+      <div class="container">
+          <div class="column-center">
+            <div class="range">
+              <input type="range" id="drone2" value="80" min="80" max="140" step="20" onchange="climb('drone2')">
+            </div>
+          </div>
+          <div class="column-left">
+            <div class="range">
+              <input type="range" id="drone1" value="80" min="80" max="140" step="20" onchange="climb('drone1')">
+            </div>
+          </div>
+          <div class="column-right">
+            <div class="range">
+              <input type="range" id="drone3" value="80" min="80" max="140" step="20" onchange="climb('drone3')">
+            </div>
+          </div>
+      </div> 
+      
+      <div class="toggle-group">
+          <div class="column-center">
+            <p>Drone 2</p>
+            <label class="toggle" >
+             <input type="checkbox" id="d2" onchange="control('d2')">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+            </label>
+          </div>
+          <div class="column-left">
+            <p>Drone 1</p>
+            <label class="toggle">
+             <input type="checkbox" id="d1" onchange="control('d1')">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+            </label>
+          </div>
+          <div class="column-right">
+          <p>Drone 3</p>
+           <label class="toggle">
+             <input type="checkbox" id="d3" onchange="control('d3')">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+            </label>
+          </div>
+      </div>
+      <br></br>
+      <button class="button button-full button-balanced" id="connect-bar" onclick="refresh();">
+        <b>Connected</b>
+      </button>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
