@@ -1,4 +1,4 @@
-
+        /*
         var socket1 = io.connect("http://192.168.3.109:8080");
         var socket2 = io.connect("http://192.168.3.108:8080");
 
@@ -9,9 +9,9 @@
         socket2.on('connect', function(){
 
         });
-
+        
         function getsocket(id){
-          switch(id):
+        switch(id) {
           case 'drone 1'||'d1':
               return socket1;
               break;
@@ -20,7 +20,7 @@
               break;
 
         }
-
+        */
         function climb(id){
           var target = document.getElementById(id);
           console.log(id + ' ' + target.value);
