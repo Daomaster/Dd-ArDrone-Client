@@ -39,14 +39,14 @@ html,body
 	}
 
 }
-#connect-bar.red {
+#connect-bar.disconnect {
 		border-color: #e42012;
 		background-color: #ef473a;
 		#connect-bar b {
 
 		}
 	}
-#connect-bar.red b {
+#connect-bar.disconnect b {
 	content: 'Disconnected';
 }
 
