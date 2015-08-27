@@ -4,10 +4,12 @@
 
         socket1.on('connect', function(){
           console.log('Socket1 Connected');
+          statusON();
         });
 
         socket2.on('connect', function(){
           console.log('Socket2 Connected');
+          statusOFF();
         });
         
         function getsocket(id){
@@ -37,17 +39,26 @@
           {
             console.log(id +' taking off.....');
             getsocket(id).emit('execute','t');
-            status = 'off';
           }
           else
           {
             console.log(id +' landing.....');
             getsocket(id).emit('execute','l');
-            status = 'on';
           }
         }
 
         function refresh(){
-          $('#connect-bar').toggleClass("disconnect");
-          $('#cnect-bar').hasClass("disconnect") == true ? $('#connect-bar b').text("Disconnected") : $('#connect-bar b').text("Connected");
+          location.reload();
+        }
+
+        function statusON(){
+            var button = document.getElementById("connect-bar");
+            button.style.backgroundColor = "#33cd5f";
+            button.style.borderColor = "#28a54c"; 
+        }
+    
+        function statusOFF(){
+            var button = document.getElementById("connect-bar");
+            button.style.backgroundColor = "#ef473a";
+            button.style.borderColor = "#e42012";
         }

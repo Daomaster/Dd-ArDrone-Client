@@ -31,28 +31,6 @@ html,body
 	writing-mode: bt-lr;
 	height: 100%;
 }
-#connect-bar {
-	border-color: #28a54c;
-	background-color: #33cd5f;
-	#connect-bar b {
-	content: 'Connected';
-	}
-
-}
-#connect-bar.disconnect {
-		border-color: #e42012;
-		background-color: #ef473a;
-		#connect-bar b {
-
-		}
-	}
-#connect-bar.disconnect b {
-	content: 'Disconnected';
-}
-
-#connect-bar b {
-	content: 'Connected';
-}
 
 
 .range
