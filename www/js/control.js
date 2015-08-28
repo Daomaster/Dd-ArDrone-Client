@@ -11,14 +11,14 @@
           console.log('Socket2 Connected');
           statusOFF();
         });
-        
+
         function getsocket(id){
           switch(id) {
             case "drone1":
             case      "d1":
                 return socket1;
                 break;
-            
+
             case 'drone2':
             case      'd2':
                 return socket2;
@@ -26,11 +26,29 @@
           };
         }
 
+        function getStatus(id){
+          switch (id) {
+            case 'drone1':
+              return 'd1';
+              break;
+            case 'drone2':
+              return 'd2';
+              break;
+            case 'drone3':
+              return 'd3';
+              break;
+          }
+        }
+
         function climb(id){
           var target = document.getElementById(id);
+          var status = document.getElementById(getStatus(id)).checked;
           console.log(id + ' ' + target.value);
           console.log(getsocket(id));
-          getsocket(id).emit('control',target.value);
+          if (status) {
+            getsocket(id).emit('control',target.value);
+          }
+
         }
 
         function control(id){
@@ -54,9 +72,9 @@
         function statusON(){
             var button = document.getElementById("connect-bar");
             button.style.backgroundColor = "#33cd5f";
-            button.style.borderColor = "#28a54c"; 
+            button.style.borderColor = "#28a54c";
         }
-    
+
         function statusOFF(){
             var button = document.getElementById("connect-bar");
             button.style.backgroundColor = "#ef473a";
