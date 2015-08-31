@@ -1,6 +1,6 @@
 
         var socket1 = io.connect("http://192.168.3.100:8080");
-        var socket2 = io.connect("http://192.168.3.109:8080");
+        var socket2 = io.connect("http://192.168.3.101:8080");
 
         socket1.on('connect', function(){
           console.log('Socket1 Connected');
